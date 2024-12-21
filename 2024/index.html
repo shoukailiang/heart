@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Christmas</title>
+  <link href='https://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Bad+Script|Gruppo|Kumar+One+Outline|League+Script|Londrina+Outline|Monoton|Sriracha|Yellowtail&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?+'>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="name">
+  <x-sign>
+    <p>亲爱的凡凡宝宝,</p>
+    <p>Merry Christmas,</p>
+    <p>很幸运在最美的时光遇见了你，</p>
+    <p>愿你永远保持一颗勇敢追梦的心。</p>
+  </x-sign>
+
+  </div>
+  <ul class="tree">
+    <div class="star"></div>
+    <div class="chunk"></div>
+  </ul>
+
+  <div class="container">
+    <div class="countdown">
+        <div id="day" data-label="Days"><span>0</span></div>
+        <div id="hour" data-label="Hours"><span>0</span></div>
+        <div id="minute" data-label="Minutes"><span>0</span></div>
+        <div id="second" data-label="Seconds"><span>0</span></div>
+    </div>
+</div>
+<audio id="myAudio" autoplay>
+  <source src="1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</body>
+<script>
+  let tree = document.querySelector(".tree");
+  for (let i = 0; i < 150; i++) {
+    let li = document.createElement("li");
+    li.style = `--i:${i}`;
+    tree.appendChild(li);
+  }
+  var audio = document.getElementById("myAudio");
+  document.addEventListener("click", () => {
+    audio.play().then(() => {
+      console.log("Audio is playing after interaction");
+    }).catch(error => {
+      console.error("Failed to play audio:", error);
+    });
+  });
+</script>
+<script src="index.js"></script>
+</html>
